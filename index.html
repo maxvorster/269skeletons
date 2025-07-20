@@ -1,61 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>269 Skeleton GIFs</title>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-  }
-  h1 {
-    text-align: center;
-  }
-  #gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  -container {
-    margin: 10px;
-    text-align: center;
-    width: 160px;
-  }
-  -container img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  -container a {
-    display: inline-block;
-    margin-top: 6px;
-    padding: 6px 12px;
-    background: #007bff;
-    color: white;
-    text-decoration: none;
-    border-radius: 4px;
-    font-size: 14px;
-  }
-  -container a:hover {
-    background: #0056b3;
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>269 Skeleton GIFs</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: #f0f0f0;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1, h2 {
+      text-align: center;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto 20px auto;
+    }
+
+    #gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .gif-container {
+      background-color: #1e1e1e;
+      border-radius: 12px;
+      padding: 10px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+      text-align: center;
+      width: 180px;
+    }
+
+    .gif-container img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .gif-container a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 14px;
+      background-color: #333;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 14px;
+      transition: background-color 0.3s;
+    }
+
+    .gif-container a:hover {
+      background-color: #555;
+    }
+  </style>
 </head>
 <body>
 
-<h1>269 Skeleton GIFs</h1>
-<img src="source (2).gif" style="width:750px;height:750px;">
-<div id="gallery"></div>
-<script>
-  // 1) Your Cloudinary cloud name
-  const cloudName = 'dnfkqwg9q';
+  <h1>269 Skeleton GIFs</h1>
+  <h2>the trumpet skeleton guy says hi</h2>
+  <img src="https://res.cloudinary.com/dnfkqwg9q/image/upload/source (2).gif" alt="Trumpet Skeleton">
+  <div id="gallery"></div>
 
-  // 2) Include it in the URL via ${cloudName}
-  const baseURL = `https://res.cloudinary.com/${cloudName}/image/upload/`;
-// List of all your GIF filenames
+  <script>
+    const cloudName = 'dnfkqwg9q';
+    const baseURL = `https://res.cloudinary.com/${cloudName}/image/upload/`;
+
 const gifFilenames = [
   "00ae65295b18337c2bc18ffb0c8ed486",
   "00e970d3eaa1b6225939e9b0e695303a",
@@ -328,24 +345,24 @@ const gifFilenames = [
   "__4987169_orig",
 ];
 
- const gallery = document.getElementById('gallery');
-  gifFilenames.forEach(filename => {
-    const container = document.createElement('div');
-    container.className = 'gif-container';
+    const gallery = document.getElementById('gallery');
+    gifFilenames.forEach(filename => {
+      const container = document.createElement('div');
+      container.className = 'gif-container';
 
-    const img = document.createElement('img');
-    img.src = baseURL + filename;
-    img.alt = filename;
+      const img = document.createElement('img');
+      img.src = baseURL + filename;
+      img.alt = filename;
 
-    const downloadLink = document.createElement('a');
-    downloadLink.href = baseURL + filename;
-    downloadLink.download = filename;
-    downloadLink.textContent = 'Download';
+      const downloadLink = document.createElement('a');
+      downloadLink.href = baseURL + filename;
+      downloadLink.download = filename;
+      downloadLink.textContent = 'Download';
 
-    container.append(img, downloadLink);
-    gallery.append(container);
-  });
-</script>
+      container.append(img, downloadLink);
+      gallery.append(container);
+    });
+  </script>
 
 </body>
 </html>
